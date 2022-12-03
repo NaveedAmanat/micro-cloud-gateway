@@ -19,7 +19,7 @@ pipeline{
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'sudo docker build -t naveed0004/micro-cloud-gateway:${BUILD_NUMBER} .'
+                    sh 'sudo docker build -t naveed0004/cloud-gateway:${BUILD_NUMBER} .'
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline{
                 script{
                     withCredentials([string(credentialsId: 'DOCKER_HUB_KEY', variable: 'DOCKER_HUB')]) {
                         sh 'echo login to docker hub'
-                       // sh 'sudo docker push naveed0004/micro-cloud-gateway:${BUILD_NUMBER}'
+                       // sh 'sudo docker push naveed0004/cloud-gateway:${BUILD_NUMBER}'
                     }
                 }
             }
