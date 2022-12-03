@@ -41,4 +41,16 @@ management:
     web:
       exposure:
         include: hystrix.stream
+        
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: eureka-0
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    servceUrl:
+      defaultZone: http://eureka-0.eureka.micro-service.default.svc.cluster.local:8761/eureka
+      
+      
 
